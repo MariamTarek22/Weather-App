@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="images/icon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="styles/all.min.css" />
+    <link rel="stylesheet" href="styles/bootstrap.min.css" />
+    <link rel="stylesheet" href="styles/index.css" />
+    <title>Weather</title>
+  </head>
+  <body>
+    <nav class="py-4">
+      <div class="navbar sizing navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="branding d-flex" href="#">
+            <img
+              src="images/logo.png"
+              alt="Logo"
+              width="80"
+              height="75"
+              class="me-1"
+            />
+            <div class="logo d-flex flex-column justify-content-center pt-3">
+              <h1 class="site-title pb-0">Weather</h1>
+              <p class="site-desc">tagline goes here</p>
+            </div>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="d-flex align-items-center justify-content-center"
+              ><i class="fa-solid fa-bars"></i
+            ></span>
+          </button>
+          <div
+            class="collapse navbar-collapse float-end"
+            id="navbarNavDropdown"
+          >
+            <ul class="navbar-nav text-center menu">
+              <li class="nav-item menu-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="#"
+                  id="homeLink"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item menu-item">
+                <a class="nav-link" href="#">News</a>
+              </li>
+              <li class="nav-item menu-item">
+                <a class="nav-link" href="#">Live Cameras</a>
+              </li>
+              <li class="nav-item menu-item">
+                <a class="nav-link" href="#">Photos</a>
+              </li>
+              <li class="nav-item menu-item">
+                <a class="nav-link" href="#" id="contactLink">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <header id="header">
+      <div class="container d-flex align-items-center justify-content-center">
+        <form action="" class="find-location">
+          <input
+            class=""
+            type="search"
+            placeholder="Find Your Location..."
+            aria-label="Search"
+            id="Search"
+          />
+          <button class="btn btn-primary butn position-absolute" type="button" >
+            Find
+          </button>
+        </form>
+      </div>
+    </header>
+
+    <section id="forecastTable" class="">
+      <div class="container">
+        <div class="row forecast-container">
+          <div class="col-lg-4 forecast">
+            <div
+              class="forecast-head d-flex align-items-center justify-content-between"
+            >
+              <div class="day" id="current-day">Monday</div>
+              <div class="date" id="current-date">10 June</div>
+            </div>
+
+            <div class="forecast-content today">
+              <div class="location" id="location">Cairo</div>
+              <div class="degree">
+                <div
+                  class="num d-flex align-items-center justify-content-center"
+                >
+                  <span id="current-degree">36.4</span> <sup> o </sup> C
+                </div>
+                <div class="icon" id="current-icon">
+                  <!-- <i class="fa-cloud-sun fa-sun"></i> -->
+                  <!-- <i class="fa-regular fa-moon text-info"></i> -->
+                  <!-- <img
+                    src="https://cdn.weatherapi.com/weather/64x64/day/176.png"
+                    alt=""
+                  /> -->
+                  <img src="https://cdn.weatherapi.com/weather/64x64/night/113.png" class="w-25" alt="Clear" />
+                </div>
+              </div>
+              <div class="custom" id="current-status">Clear</div>
+
+              <span class="gray-color">
+                <i class="fa-solid fa-umbrella m-1"></i> 20%</span
+              >
+              <span class="gray-color"
+                ><i class="fa-solid fa-wind m-1"></i> 18km/h</span
+              >
+              <span class="gray-color"
+                ><i class="fa-solid fa-compass m-1"></i> East</span
+              >
+            </div>
+          </div>
+
+          <div class="col-lg-4 forecast">
+            <div
+              class="forecast-head d-flex align-items-center justify-content-center text-center"
+            >
+              <div class="day" id="future-day">Tuesday</div>
+            </div>
+
+            <div class="forecast-content today text-center">
+              <div class="icon my-3" id="future-icon">
+                <img src="https://cdn.weatherapi.com/weather/64x64/day/113.png" class="w-25" alt="Sunny" />
+              </div>
+              <div class="degree">
+                <div
+                  class="d-flex align-items-center justify-content-center mb-1"
+                >
+                  <span id="future-max-degree" class="me-1">45</span
+                  ><sup>o</sup>
+                </div>
+                <div
+                  class="nd-degree d-flex align-items-center justify-content-center"
+                >
+                  <span id="future-min-degree" class="me-1">27.7</span
+                  ><sup>o</sup>
+                </div>
+              </div>
+              <div class="custom" id="future-status">Sunny</div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 forecast">
+            <div
+              class="forecast-head d-flex align-items-center justify-content-center text-center"
+            >
+              <div class="day" id="future-day">Tuesday</div>
+            </div>
+
+            <div class="forecast-content today text-center">
+              <div class="icon my-3" id="future-icon">
+                <img src="https://cdn.weatherapi.com/weather/64x64/day/113.png" class="w-25" alt="Sunny" />
+              </div>
+              <div class="degree">
+                <div
+                  class="d-flex align-items-center justify-content-center mb-1"
+                >
+                  <span id="future-max-degree" class="me-1">39.2</span
+                  ><sup>o</sup>
+                </div>
+                <div
+                  class="nd-degree d-flex align-items-center justify-content-center"
+                >
+                  <span id="future-min-degree" class="me-1">25</span
+                  ><sup>o</sup>
+                </div>
+              </div>
+              <div class="custom" id="future-status">Sunny</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact py-5 d-none border-0">
+      <div class="container">
+        <div class="border-2 rounded-pill p-3 contact-nav">
+          <a href="" class="text-decoration-none home-link">Home</a>
+          <i class="fa-solid fa-arrow-right fa-2xs"></i>
+          <span class="text-light">Contact</span>
+        </div>
+
+        <div class="row">
+          <div class="col-md-5">
+            <div class="contact-map mt-5 me-5">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27617.84586545631!2d31.2180736!3d30.087577599999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1458412286ef893f%3A0x592bacb35d687399!2z2LPZgdin2LHZiiDYqNin2LHZgyDYp9mE2KzZitiy2Kk!5e0!3m2!1sar!2seg!4v1718130512951!5m2!1sar!2seg"
+                width="100%"
+                height="350"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+              <div class="contact-details p-4">
+                <div class="home-link">
+                  <i class="fa-solid fa-location-dot"></i>
+                  Company Name INC. <br />
+                  <span class="ms-4">2803 Avenue Street, Los Angeles</span>
+                </div>
+                <span class="me-1">
+                  <i class="fa-solid fa-phone"></i>
+                  +1 800 314 235
+                </span>
+                <span
+                  ><i class="fa-regular fa-envelope"></i>
+                  contact@companyname.com
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-md-offset-1">
+            <div class="contect-us mt-5 text-light">
+              <h2>Contact Us</h2>
+              <p class="home-link">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Commodi consectetur inventore ducimus, facilis, numquam id
+                soluta omnis eius recusandae nesciunt vero repellat harum cum.
+                Nisi facilis odit hic, ipsum sed!
+              </p>
+              <form action="">
+                <div class="row">
+                  <div class="col-md-5">
+                    <div class="input-item mx-2">
+                      <input
+                        type="text"
+                        class="contact-inputs"
+                        placeholder="Your Name..."
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-5">
+                    <div class="input-item mx-2">
+                      <input
+                        type="text"
+                        class="contact-inputs"
+                        placeholder="Your Email..."
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-5">
+                    <div class="input-item mx-2">
+                      <input
+                        type="text"
+                        class="contact-inputs"
+                        placeholder="Company Name..."
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-5">
+                    <div class="input-item mx-2">
+                      <input
+                        type="text"
+                        class="contact-inputs"
+                        placeholder="Website..."
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="input-item mx-2">
+                  <textarea
+                    class="contact-inputs message-input ps-3"
+                    placeholder=" Message..."
+                  ></textarea>
+                </div>
+                <button
+                  class="btn btn-primary float-end rounded-pill px-4"
+                  type="submit"
+                >
+                  submit
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="row align-items-center mb-4">
+          <div class="col-lg-8">
+            <div class="subscribe-input">
+              <form class="subscribe" role="search">
+                <input
+                  class=""
+                  type="search"
+                  placeholder="Enter your email to subscribe..."
+                  aria-label="Search"
+                  id="Search"
+                />
+                <button
+                  class="btn btn-primary butn position-absolute"
+                  type="submit"
+                >
+                  Subscribe
+                </button>
+              </form>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div
+              class="social-icons d-flex align-items-center justify-content-center"
+            >
+              <div
+                class="icon-circle d-flex align-items-center justify-content-center"
+              >
+                <i class="fa-brands fa-facebook-f"></i>
+              </div>
+              <div
+                class="icon-circle d-flex align-items-center justify-content-center"
+              >
+                <i class="fa-brands fa-twitter"></i>
+              </div>
+              <div
+                class="icon-circle d-flex align-items-center justify-content-center"
+              >
+                <i class="fa-brands fa-google-plus-g"></i>
+              </div>
+              <div
+                class="icon-circle d-flex align-items-center justify-content-center"
+              >
+                <i class="fa-brands fa-pinterest"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="copy-write">
+          Copyright 2014 Company name. Designed by Themezy. All rights reserved
+        </p>
+      </div>
+    </footer>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
